@@ -1,0 +1,1587 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Pres Les — Softness Woven, Luxury Redefined</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+--linen:#FFFEFB;
+--ivory:#FAF6EE;
+--sand:#F1EADA;
+--taupe:#A89A87;
+--taupe-light:#C9BFAE;
+--taupe-dark:#7D7160;
+--gold:#B8935A;
+--gold-light:#D9BD8C;
+--gold-dark:#8E6E3F;
+--dustyblue:#7B95A3;
+--dustyblue-light:#AEC2CC;
+--sage:#8FA088;
+--sage-light:#B8C9B2;
+--walnut:#3D332A;
+--walnut-soft:#5A4F42;
+--cream-shadow:#E8DFCB;
+--serif:'Cormorant Garamond',Georgia,serif;
+--sans:'Inter',system-ui,sans-serif;
+--ease-luxury:cubic-bezier(0.16,1,0.3,1);
+--ease-silk:cubic-bezier(0.25,0.46,0.45,0.94);
+}
+html{scroll-behavior:smooth;overflow-x:hidden}
+body{
+background:var(--ivory);
+color:var(--walnut);
+font-family:var(--sans);
+font-size:16px;
+line-height:1.6;
+overflow-x:hidden;
+cursor:none;
+}
+::selection{background:var(--gold-light);color:var(--walnut)}
+
+#cursor{
+position:fixed;width:11px;height:11px;
+background:var(--gold);
+border-radius:50%;
+pointer-events:none;z-index:9999;
+transform:translate(-50%,-50%);
+transition:width .3s var(--ease-luxury),height .3s var(--ease-luxury),background .3s;
+}
+#cursor-trail{
+position:fixed;width:38px;height:38px;
+border:1px solid rgba(184,147,90,0.35);
+border-radius:50%;
+pointer-events:none;z-index:9998;
+transform:translate(-50%,-50%);
+transition:all .15s var(--ease-silk);
+}
+body:hover #cursor{opacity:1}
+
+nav{
+position:fixed;top:0;left:0;right:0;
+z-index:1000;
+padding:28px 60px;
+display:flex;align-items:center;justify-content:space-between;
+transition:all .6s var(--ease-luxury);
+}
+nav.scrolled{
+background:rgba(250,246,238,0.9);
+backdrop-filter:blur(20px);
+-webkit-backdrop-filter:blur(20px);
+padding:18px 60px;
+border-bottom:1px solid rgba(184,147,90,0.15);
+box-shadow:0 1px 24px rgba(125,113,96,0.06);
+}
+.nav-logo{
+font-family:var(--serif);
+font-size:22px;
+font-weight:300;
+letter-spacing:0.3em;
+text-transform:uppercase;
+color:var(--walnut);
+text-decoration:none;
+}
+.nav-logo span{color:var(--gold-dark)}
+.nav-links{
+display:flex;gap:48px;list-style:none;
+}
+.nav-links a{
+font-size:11px;
+letter-spacing:0.18em;
+text-transform:uppercase;
+color:var(--taupe-dark);
+text-decoration:none;
+transition:color .3s;
+font-weight:400;
+}
+.nav-links a:hover{color:var(--gold-dark)}
+.nav-right{display:flex;align-items:center;gap:28px}
+.nav-icon{
+background:none;border:none;
+color:var(--taupe-dark);
+cursor:none;
+font-size:18px;
+transition:color .3s;
+}
+.nav-icon:hover{color:var(--gold-dark)}
+.nav-cta{
+font-size:10px;letter-spacing:0.2em;text-transform:uppercase;
+border:1px solid rgba(184,147,90,0.5);
+color:var(--gold-dark);
+padding:10px 24px;
+background:transparent;
+cursor:none;
+transition:all .4s var(--ease-luxury);
+font-family:var(--sans);
+text-decoration:none;
+}
+.nav-cta:hover{background:var(--gold);color:var(--linen);border-color:var(--gold)}
+
+#hero{
+position:relative;
+height:100vh;min-height:700px;
+display:flex;align-items:center;justify-content:center;
+overflow:hidden;
+background:linear-gradient(180deg,#FCF9F3 0%,#F6EFE1 55%,#EFE5D0 100%);
+}
+#hero-canvas{
+position:absolute;inset:0;
+width:100%;height:100%;
+opacity:0.55;
+}
+.hero-overlay{
+position:absolute;inset:0;
+background:radial-gradient(ellipse at 50% 30%,rgba(255,253,248,0.4) 0%,rgba(250,246,238,0.15) 45%,rgba(239,229,208,0.35) 100%);
+}
+.hero-content{
+position:relative;z-index:2;
+text-align:center;
+max-width:900px;
+padding:0 40px;
+}
+.hero-eyebrow{
+font-size:10px;letter-spacing:0.4em;text-transform:uppercase;
+color:var(--gold-dark);
+margin-bottom:32px;
+opacity:0;
+animation:fadeUp 1s var(--ease-luxury) 0.5s forwards;
+}
+.hero-headline{
+font-family:var(--serif);
+font-size:clamp(52px,7vw,112px);
+font-weight:300;
+line-height:1.0;
+letter-spacing:-0.01em;
+color:var(--walnut);
+margin-bottom:16px;
+opacity:0;
+animation:fadeUp 1.2s var(--ease-luxury) 0.8s forwards;
+}
+.hero-headline em{
+font-style:italic;
+color:var(--gold-dark);
+font-weight:300;
+}
+.hero-subline{
+font-family:var(--serif);
+font-size:clamp(18px,2.2vw,28px);
+font-weight:300;
+font-style:italic;
+color:var(--taupe-dark);
+margin-bottom:56px;
+letter-spacing:0.02em;
+opacity:0;
+animation:fadeUp 1.2s var(--ease-luxury) 1.1s forwards;
+}
+.hero-actions{
+display:flex;gap:24px;justify-content:center;align-items:center;
+opacity:0;
+animation:fadeUp 1s var(--ease-luxury) 1.4s forwards;
+}
+.btn-primary{
+font-size:10px;letter-spacing:0.25em;text-transform:uppercase;
+background:var(--walnut);
+color:var(--linen);
+padding:18px 48px;
+border:1px solid var(--walnut);
+cursor:none;
+transition:all .4s var(--ease-luxury);
+font-family:var(--sans);
+font-weight:500;
+text-decoration:none;
+display:inline-block;
+}
+.btn-primary:hover{background:var(--gold-dark);border-color:var(--gold-dark);transform:translateY(-2px)}
+.btn-ghost{
+font-size:10px;letter-spacing:0.25em;text-transform:uppercase;
+background:transparent;
+color:var(--walnut);
+padding:18px 48px;
+border:1px solid rgba(61,51,42,0.25);
+cursor:none;
+transition:all .4s var(--ease-luxury);
+font-family:var(--sans);
+text-decoration:none;
+display:inline-block;
+}
+.btn-ghost:hover{border-color:rgba(61,51,42,0.5);background:rgba(61,51,42,0.04)}
+.hero-scroll{
+position:absolute;bottom:40px;left:50%;transform:translateX(-50%);
+display:flex;flex-direction:column;align-items:center;gap:12px;
+opacity:0;
+animation:fadeIn 1s var(--ease-luxury) 2s forwards;
+}
+.hero-scroll span{
+font-size:9px;letter-spacing:0.3em;text-transform:uppercase;
+color:var(--taupe);
+}
+.scroll-line{
+width:1px;height:48px;
+background:linear-gradient(to bottom,var(--gold),transparent);
+animation:scrollPulse 2s ease-in-out infinite;
+}
+
+.marquee-section{
+overflow:hidden;
+border-top:1px solid rgba(184,147,90,0.18);
+border-bottom:1px solid rgba(184,147,90,0.18);
+padding:18px 0;
+background:var(--sand);
+}
+.marquee-inner{
+display:flex;gap:0;
+animation:marquee 30s linear infinite;
+white-space:nowrap;
+}
+.marquee-text{
+font-size:10px;letter-spacing:0.35em;text-transform:uppercase;
+color:var(--taupe-dark);
+padding:0 48px;
+}
+.marquee-text span{color:var(--gold-dark);margin:0 12px}
+
+section{padding:120px 60px}
+.section-label{
+font-size:9px;letter-spacing:0.4em;text-transform:uppercase;
+color:var(--gold-dark);
+margin-bottom:24px;
+display:block;
+}
+.section-title{
+font-family:var(--serif);
+font-size:clamp(36px,5vw,72px);
+font-weight:300;
+line-height:1.1;
+color:var(--walnut);
+}
+.section-title em{font-style:italic;color:var(--gold-dark)}
+.section-body{
+font-size:15px;line-height:1.8;
+color:var(--taupe-dark);
+max-width:520px;
+font-weight:300;
+}
+.reveal{
+opacity:0;
+transform:translateY(40px);
+transition:opacity .9s var(--ease-luxury),transform .9s var(--ease-luxury);
+}
+.reveal.visible{opacity:1;transform:none}
+
+#collections{
+background:var(--linen);
+padding:120px 60px;
+}
+.collections-header{
+display:flex;justify-content:space-between;align-items:flex-end;
+margin-bottom:64px;
+}
+.bento{
+display:grid;
+grid-template-columns:repeat(12,1fr);
+grid-template-rows:auto;
+gap:16px;
+}
+.bento-card{
+position:relative;overflow:hidden;
+background:var(--sand);
+cursor:none;
+border-radius:2px;
+box-shadow:0 1px 3px rgba(125,113,96,0.08);
+}
+.bento-card::after{
+content:'';
+position:absolute;inset:0;
+background:linear-gradient(to top,rgba(61,51,42,0.55) 0%,transparent 55%);
+transition:opacity .6s;
+}
+.bento-card:hover::after{opacity:0.85}
+.bento-card img{
+width:100%;height:100%;object-fit:cover;
+transition:transform .8s var(--ease-luxury);
+display:block;
+}
+.bento-card:hover img{transform:scale(1.06)}
+.bento-info{
+position:absolute;bottom:28px;left:28px;right:28px;
+z-index:2;
+transform:translateY(8px);
+transition:transform .5s var(--ease-luxury);
+}
+.bento-card:hover .bento-info{transform:none}
+.bento-collection{
+font-size:9px;letter-spacing:0.3em;text-transform:uppercase;
+color:var(--gold-light);
+margin-bottom:6px;
+}
+.bento-name{
+font-family:var(--serif);
+font-size:26px;font-weight:300;
+color:#FFFEFB;
+line-height:1.2;
+}
+.bento-price{
+font-size:13px;color:rgba(255,254,251,0.8);
+margin-top:8px;
+}
+.bento-card.large{grid-column:span 7;min-height:560px}
+.bento-card.med{grid-column:span 5;min-height:560px}
+.bento-card.wide{grid-column:span 5;min-height:340px}
+.bento-card.tall{grid-column:span 4;min-height:340px}
+.bento-card.slim{grid-column:span 3;min-height:340px}
+
+#heritage{
+background:var(--sand);
+color:var(--walnut);
+padding:140px 60px;
+}
+.heritage-grid{
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:100px;
+align-items:center;
+margin-top:80px;
+}
+.heritage-visual{position:relative}
+.heritage-badge{
+position:absolute;
+bottom:-24px;right:-24px;
+width:120px;height:120px;
+background:var(--linen);
+border:1px solid rgba(184,147,90,0.3);
+border-radius:50%;
+display:flex;flex-direction:column;align-items:center;justify-content:center;
+box-shadow:0 8px 24px rgba(125,113,96,0.15);
+}
+.heritage-badge-num{
+font-family:var(--serif);
+font-size:36px;font-weight:300;
+color:var(--gold-dark);
+line-height:1;
+}
+.heritage-badge-text{
+font-size:9px;letter-spacing:0.2em;text-transform:uppercase;
+color:var(--taupe-dark);
+}
+.timeline{display:flex;flex-direction:column;gap:0;margin-top:48px}
+.timeline-item{
+display:flex;gap:28px;
+padding:28px 0;
+border-bottom:1px solid rgba(184,147,90,0.22);
+position:relative;
+}
+.timeline-year{
+font-family:var(--serif);
+font-size:20px;font-weight:300;
+color:var(--gold-dark);
+min-width:64px;
+margin-top:2px;
+}
+.timeline-content h4{
+font-family:var(--serif);
+font-size:20px;font-weight:400;
+color:var(--walnut);
+margin-bottom:6px;
+}
+.timeline-content p{
+font-size:14px;line-height:1.7;
+color:var(--taupe-dark);
+font-weight:300;
+}
+
+#materials{background:var(--ivory);padding:120px 60px}
+.materials-header{text-align:center;margin-bottom:80px}
+.materials-grid{
+display:grid;
+grid-template-columns:repeat(4,1fr);
+gap:16px;
+}
+.material-card{
+position:relative;
+height:480px;overflow:hidden;
+cursor:none;
+border-radius:2px;
+box-shadow:0 1px 3px rgba(125,113,96,0.1);
+}
+.material-bg{
+position:absolute;inset:0;
+transition:transform .8s var(--ease-luxury);
+}
+.material-card:hover .material-bg{transform:scale(1.08)}
+.velvet-bg{background:linear-gradient(135deg,#9CB596 0%,#7C9A75 40%,#B8CDB0 100%)}
+.jacquard-bg{background:linear-gradient(135deg,#C9B8A0 0%,#AE9A7C 40%,#DCCDB4 100%)}
+.sateen-bg{background:linear-gradient(135deg,#D6BD96 0%,#C2A579 40%,#E8D5B5 100%)}
+.percale-bg{background:linear-gradient(135deg,#AEC2CC 0%,#8FA9B5 40%,#C8DAE2 100%)}
+.material-texture{position:absolute;inset:0;opacity:0.35;transition:opacity .6s}
+.velvet-texture{background:repeating-linear-gradient(45deg,rgba(255,255,255,0.18) 0px,rgba(255,255,255,0.18) 1px,transparent 1px,transparent 4px)}
+.jacquard-texture{background:repeating-linear-gradient(0deg,rgba(255,255,255,0.2) 0px,rgba(255,255,255,0.2) 1px,transparent 1px,transparent 8px),repeating-linear-gradient(90deg,rgba(255,255,255,0.2) 0px,rgba(255,255,255,0.2) 1px,transparent 1px,transparent 8px)}
+.sateen-texture{background:repeating-linear-gradient(-45deg,rgba(255,255,255,0.22) 0px,rgba(255,255,255,0.22) 2px,transparent 2px,transparent 6px)}
+.percale-texture{background:repeating-linear-gradient(0deg,rgba(255,255,255,0.16) 0px,rgba(255,255,255,0.16) 1px,transparent 1px,transparent 6px),repeating-linear-gradient(90deg,rgba(255,255,255,0.16) 0px,rgba(255,255,255,0.16) 1px,transparent 1px,transparent 6px)}
+.material-card:hover .material-texture{opacity:0.6}
+.material-overlay{
+position:absolute;inset:0;
+background:linear-gradient(to top,rgba(61,51,42,0.78) 0%,transparent 62%);
+}
+.material-content{position:absolute;bottom:32px;left:32px;right:32px}
+.material-name{
+font-family:var(--serif);
+font-size:32px;font-weight:300;font-style:italic;
+color:#FFFEFB;
+margin-bottom:8px;
+}
+.material-desc{
+font-size:12px;letter-spacing:0.03em;
+color:rgba(255,254,251,0.78);
+line-height:1.6;
+max-height:0;overflow:hidden;
+transition:max-height .6s var(--ease-luxury);
+}
+.material-card:hover .material-desc{max-height:90px}
+.material-tag{
+display:inline-block;
+font-size:9px;letter-spacing:0.25em;text-transform:uppercase;
+color:#FFFEFB;
+border:1px solid rgba(255,254,251,0.5);
+padding:5px 12px;
+margin-bottom:12px;
+}
+
+#products{background:var(--linen);color:var(--walnut);padding:120px 60px}
+.products-intro{
+display:flex;justify-content:space-between;align-items:flex-end;
+margin-bottom:72px;
+}
+.products-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:40px}
+.product-card{cursor:none}
+.product-image{
+position:relative;
+overflow:hidden;
+aspect-ratio:4/5;
+background:var(--sand);
+margin-bottom:20px;
+border-radius:2px;
+}
+.product-image img{
+width:100%;height:100%;object-fit:cover;
+transition:transform .8s var(--ease-luxury);
+}
+.product-card:hover .product-image img{transform:scale(1.06)}
+.product-tag{
+position:absolute;top:16px;left:16px;
+font-size:9px;letter-spacing:0.2em;text-transform:uppercase;
+background:var(--gold);
+color:var(--linen);
+padding:5px 12px;
+z-index:2;
+border-radius:1px;
+}
+.product-wishlist{
+position:absolute;top:16px;right:16px;
+width:36px;height:36px;
+background:rgba(255,254,251,0.92);
+border:none;cursor:none;
+display:flex;align-items:center;justify-content:center;
+opacity:0;
+transition:opacity .3s;
+font-size:16px;
+border-radius:50%;
+color:var(--walnut);
+}
+.product-card:hover .product-wishlist{opacity:1}
+.product-coll{
+font-size:10px;letter-spacing:0.2em;text-transform:uppercase;
+color:var(--taupe);
+margin-bottom:8px;
+}
+.product-name{
+font-family:var(--serif);
+font-size:22px;font-weight:400;
+color:var(--walnut);
+margin-bottom:6px;
+line-height:1.3;
+}
+.product-sub{
+font-size:13px;color:var(--taupe-dark);
+font-weight:300;
+margin-bottom:12px;
+}
+.product-price{display:flex;gap:12px;align-items:center}
+.price-current{
+font-family:var(--serif);
+font-size:20px;font-weight:400;
+color:var(--walnut);
+}
+.price-install{font-size:12px;color:var(--taupe)}
+.product-colors{display:flex;gap:8px;margin-top:12px}
+.color-dot{
+width:16px;height:16px;
+border-radius:50%;
+border:2px solid transparent;
+transition:border-color .2s;
+cursor:none;
+}
+.color-dot:hover,.color-dot.active{border-color:var(--walnut)}
+.color-blue{background:#AEC2CC}
+.color-mint{background:#B8CDB0}
+.color-ivory{background:#F1EADA;border:1px solid #D8CBB0}
+.color-gold{background:#B8935A}
+.color-emerald{background:#7C9A75}
+.color-caramel{background:#C2A579}
+.color-green{background:#94A878}
+
+#testimonials{background:var(--sand);padding:120px 60px}
+.testimonials-header{text-align:center;margin-bottom:72px}
+.testimonials-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+.testimonial-card{
+background:var(--linen);
+border:1px solid rgba(184,147,90,0.2);
+padding:40px;
+position:relative;
+transition:border-color .4s,box-shadow .4s,transform .4s;
+border-radius:2px;
+}
+.testimonial-card:hover{
+border-color:rgba(184,147,90,0.4);
+box-shadow:0 12px 32px rgba(125,113,96,0.12);
+transform:translateY(-4px);
+}
+.quote-mark{
+font-family:var(--serif);
+font-size:80px;font-weight:300;
+color:rgba(184,147,90,0.25);
+line-height:0.5;
+margin-bottom:24px;
+}
+.testimonial-text{
+font-family:var(--serif);
+font-size:18px;font-weight:300;font-style:italic;
+color:var(--walnut-soft);
+line-height:1.6;
+margin-bottom:28px;
+}
+.testimonial-author{display:flex;align-items:center;gap:14px}
+.author-avatar{
+width:44px;height:44px;
+border-radius:50%;
+background:linear-gradient(135deg,var(--gold-light) 0%,var(--gold-dark) 100%);
+display:flex;align-items:center;justify-content:center;
+font-family:var(--serif);
+font-size:16px;
+color:var(--linen);
+flex-shrink:0;
+}
+.author-name{font-size:13px;font-weight:500;color:var(--walnut);margin-bottom:2px}
+.author-loc{font-size:11px;color:var(--taupe);letter-spacing:0.05em}
+.stars{display:flex;gap:3px;margin-bottom:20px}
+.star{color:var(--gold);font-size:13px}
+
+#gallery{background:var(--ivory);padding:0;overflow:hidden}
+.gallery-strip{display:flex;height:500px}
+.gallery-pane{flex:1;overflow:hidden;position:relative;cursor:none}
+.gallery-pane img{
+width:100%;height:100%;object-fit:cover;
+transition:transform .8s var(--ease-luxury),filter .6s;
+filter:saturate(0.85);
+}
+.gallery-pane:hover img{transform:scale(1.08);filter:saturate(1.05)}
+.gallery-caption{
+position:absolute;bottom:0;left:0;right:0;
+padding:28px 24px;
+background:linear-gradient(to top,rgba(61,51,42,0.7),transparent);
+opacity:0;
+transition:opacity .4s;
+}
+.gallery-pane:hover .gallery-caption{opacity:1}
+.gallery-caption p{
+font-family:var(--serif);
+font-size:16px;font-style:italic;
+color:#FFFEFB;
+}
+
+#loyalty{
+background:linear-gradient(135deg,#EFE2C5 0%,#E5D4AE 100%);
+padding:100px 60px;
+text-align:center;
+color:var(--walnut);
+}
+#loyalty .section-label{color:var(--gold-dark);display:block;margin:0 auto 24px}
+.loyalty-features{display:flex;justify-content:center;gap:80px;margin-top:60px}
+.loyalty-feat h4{
+font-family:var(--serif);
+font-size:22px;font-weight:400;
+color:var(--walnut);
+margin-bottom:8px;
+}
+.loyalty-feat p{
+font-size:13px;color:rgba(61,51,42,0.65);
+max-width:180px;
+line-height:1.7;
+}
+.loyalty-icon{font-size:28px;margin-bottom:16px;color:var(--gold-dark)}
+
+footer{
+background:#F3EBDA;
+padding:80px 60px 40px;
+border-top:1px solid rgba(184,147,90,0.2);
+}
+.footer-grid{
+display:grid;
+grid-template-columns:2fr 1fr 1fr 1fr;
+gap:60px;
+margin-bottom:60px;
+}
+.footer-brand .nav-logo{display:block;margin-bottom:20px}
+.footer-tagline{
+font-family:var(--serif);
+font-size:16px;font-weight:300;font-style:italic;
+color:var(--taupe-dark);
+line-height:1.6;
+max-width:240px;
+}
+.footer-col h5{
+font-size:10px;letter-spacing:0.3em;text-transform:uppercase;
+color:var(--gold-dark);
+margin-bottom:24px;
+}
+.footer-col ul{list-style:none}
+.footer-col li{margin-bottom:12px}
+.footer-col a{
+font-size:13px;color:var(--taupe-dark);
+text-decoration:none;
+transition:color .3s;
+font-weight:300;
+}
+.footer-col a:hover{color:var(--walnut)}
+.footer-bottom{
+border-top:1px solid rgba(184,147,90,0.2);
+padding-top:32px;
+display:flex;justify-content:space-between;align-items:center;
+}
+.footer-copy{font-size:12px;color:var(--taupe-dark);letter-spacing:0.05em}
+.footer-social{display:flex;gap:20px}
+.social-link{
+font-size:13px;color:var(--taupe-dark);
+text-decoration:none;
+letter-spacing:0.1em;
+transition:color .3s;
+}
+.social-link:hover{color:var(--gold-dark)}
+
+.quality-ribbon{
+display:inline-flex;align-items:center;gap:12px;
+border:1px solid rgba(184,147,90,0.35);
+background:rgba(255,254,251,0.5);
+padding:12px 24px;
+margin-top:32px;
+}
+.quality-ribbon span{
+font-size:10px;letter-spacing:0.2em;text-transform:uppercase;
+color:var(--taupe-dark);
+}
+.quality-ribbon strong{
+font-size:10px;letter-spacing:0.2em;text-transform:uppercase;
+color:var(--gold-dark);
+}
+
+#cookware{background:var(--sand);padding:120px 60px}
+.cookware-layout{
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:100px;
+align-items:center;
+}
+.cookware-visual{position:relative}
+.cookware-stats{display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-top:48px}
+.stat-box{
+border:1px solid rgba(184,147,90,0.25);
+background:var(--linen);
+padding:24px;
+border-radius:2px;
+}
+.stat-num{
+font-family:var(--serif);
+font-size:36px;font-weight:300;
+color:var(--gold-dark);
+line-height:1;
+margin-bottom:6px;
+}
+.stat-label{
+font-size:10px;letter-spacing:0.2em;text-transform:uppercase;
+color:var(--taupe-dark);
+}
+
+#newsletter{background:var(--linen);color:var(--walnut);padding:100px 60px;text-align:center}
+#newsletter .section-body{color:var(--taupe-dark);margin:0 auto 40px;text-align:center}
+.newsletter-form{display:flex;max-width:480px;margin:0 auto}
+.newsletter-input{
+flex:1;
+padding:16px 24px;
+border:1px solid rgba(184,147,90,0.3);
+background:var(--ivory);
+font-size:14px;
+font-family:var(--sans);
+color:var(--walnut);
+outline:none;
+transition:border-color .3s;
+}
+.newsletter-input:focus{border-color:var(--gold)}
+.newsletter-input::placeholder{color:var(--taupe)}
+.newsletter-btn{
+padding:16px 32px;
+background:var(--walnut);
+color:var(--linen);
+border:none;
+font-size:10px;letter-spacing:0.2em;text-transform:uppercase;
+font-family:var(--sans);
+cursor:none;
+transition:background .3s;
+white-space:nowrap;
+}
+.newsletter-btn:hover{background:var(--gold-dark)}
+
+@keyframes fadeUp{from{opacity:0;transform:translateY(30px)}to{opacity:1;transform:translateY(0)}}
+@keyframes fadeIn{from{opacity:0}to{opacity:1}}
+@keyframes marquee{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+@keyframes scrollPulse{0%,100%{opacity:1;transform:scaleY(1)}50%{opacity:0.4;transform:scaleY(0.7)}}
+
+@media(max-width:1024px){
+nav{padding:24px 32px}
+nav.scrolled{padding:16px 32px}
+section{padding:80px 32px}
+.bento-card.large{grid-column:span 12}
+.bento-card.med{grid-column:span 12}
+.bento-card.wide,.bento-card.tall,.bento-card.slim{grid-column:span 6}
+.heritage-grid,.cookware-layout{grid-template-columns:1fr}
+.products-grid{grid-template-columns:repeat(2,1fr)}
+.materials-grid{grid-template-columns:repeat(2,1fr)}
+.testimonials-grid{grid-template-columns:1fr}
+.footer-grid{grid-template-columns:1fr 1fr}
+.loyalty-features{gap:40px;flex-wrap:wrap}
+}
+@media(max-width:640px){
+body{cursor:auto}
+#cursor,#cursor-trail{display:none}
+nav{padding:20px 20px}
+nav.scrolled{padding:14px 20px}
+.nav-links{display:none}
+section{padding:60px 20px}
+.hero-actions{flex-direction:column}
+.products-grid{grid-template-columns:1fr}
+.materials-grid{grid-template-columns:1fr}
+.testimonials-grid{grid-template-columns:1fr}
+.gallery-strip{height:300px}
+.footer-grid{grid-template-columns:1fr}
+.collections-header{flex-direction:column;gap:20px;align-items:flex-start}
+.bento-card.large,.bento-card.med,.bento-card.wide,.bento-card.tall,.bento-card.slim{grid-column:span 12;min-height:280px}
+.newsletter-form{flex-direction:column}
+.cookware-stats{grid-template-columns:1fr}
+.loyalty-features{flex-direction:column;align-items:center}
+.footer-bottom{flex-direction:column;gap:20px}
+}
+</style>
+</head>
+<body>
+
+<div id="cursor"></div>
+<div id="cursor-trail"></div>
+
+<nav id="navbar">
+<a href="#" class="nav-logo">Pres <span>Les</span></a>
+<ul class="nav-links">
+<li><a href="#collections">Collections</a></li>
+<li><a href="#heritage">Heritage</a></li>
+<li><a href="#materials">Materials</a></li>
+<li><a href="#products">Shop</a></li>
+<li><a href="#cookware">Cookware</a></li>
+</ul>
+<div class="nav-right">
+<button class="nav-icon" aria-label="Search">⌕</button>
+<button class="nav-icon" aria-label="Wishlist">♡</button>
+<a href="#products" class="nav-cta">Shop Now</a>
+</div>
+</nav>
+
+<section id="hero">
+<canvas id="hero-canvas"></canvas>
+<div class="hero-overlay"></div>
+<div class="hero-content">
+<p class="hero-eyebrow">June 2026 Collection — Exclusive Offerings</p>
+<h1 class="hero-headline">Softness<br>Woven <em>Luxury</em><br>Redefined</h1>
+<p class="hero-subline">Where craftsmanship meets the art of living beautifully</p>
+<div class="hero-actions">
+<a href="#collections" class="btn-primary">Explore Collections</a>
+<a href="#heritage" class="btn-ghost">Our Heritage</a>
+</div>
+<div class="quality-ribbon reveal">
+<strong>Quality Guarantee</strong>
+<span>·</span>
+<span>Up to 7 Years on Premium Bedding</span>
+<span>·</span>
+<span>25 Years on Cookware</span>
+</div>
+</div>
+<div class="hero-scroll">
+<span>Scroll to explore</span>
+<div class="scroll-line"></div>
+</div>
+</section>
+
+<div class="marquee-section" aria-hidden="true">
+<div class="marquee-inner">
+<span class="marquee-text">Tilly Charming Check<span>✦</span></span>
+<span class="marquee-text">Nadia Magnificent in Mint<span>✦</span></span>
+<span class="marquee-text">Iris Vogue Velvet<span>✦</span></span>
+<span class="marquee-text">Ava Nature-Inspired Neutral<span>✦</span></span>
+<span class="marquee-text">Luxe Fur Blankets<span>✦</span></span>
+<span class="marquee-text">Cosmopolitan Cookware<span>✦</span></span>
+<span class="marquee-text">Pres Les — Softness Woven<span>✦</span></span>
+<span class="marquee-text">Tilly Charming Check<span>✦</span></span>
+<span class="marquee-text">Nadia Magnificent in Mint<span>✦</span></span>
+<span class="marquee-text">Iris Vogue Velvet<span>✦</span></span>
+<span class="marquee-text">Ava Nature-Inspired Neutral<span>✦</span></span>
+<span class="marquee-text">Luxe Fur Blankets<span>✦</span></span>
+<span class="marquee-text">Cosmopolitan Cookware<span>✦</span></span>
+<span class="marquee-text">Pres Les — Softness Woven<span>✦</span></span>
+</div>
+</div>
+
+<section id="collections">
+<div class="collections-header reveal">
+<div>
+<span class="section-label">June 2026 Promotions</span>
+<h2 class="section-title">The New<br><em>Collections</em></h2>
+</div>
+<a href="#products" class="btn-ghost">View All Collections</a>
+</div>
+<div class="bento">
+<div class="bento-card large reveal" style="transition-delay:.1s">
+<div style="width:100%;height:100%;background:linear-gradient(135deg,#AEC2CC 0%,#8FA9B5 40%,#C8DAE2 70%,#AEC2CC 100%);display:flex;align-items:center;justify-content:center;position:relative;overflow:hidden">
+<div style="position:absolute;inset:0;background:repeating-linear-gradient(-45deg,rgba(255,255,255,0.12) 0px,rgba(255,255,255,0.12) 2px,transparent 2px,transparent 8px)"></div>
+<div style="text-align:center;position:relative;z-index:1">
+<div style="position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:200px;height:200px;border:1px solid rgba(255,255,255,0.35);border-radius:50%"></div>
+<div style="position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:160px;height:160px;border:1px solid rgba(255,255,255,0.25);border-radius:50%"></div>
+</div>
+<div style="position:absolute;bottom:0;left:0;right:0;height:220px;background:linear-gradient(to top,rgba(61,51,42,0.65),transparent)"></div>
+</div>
+<div class="bento-info">
+<p class="bento-collection">Special Edition</p>
+<h3 class="bento-name">Tilly<br>Charming Check</h3>
+<p class="bento-price">From R1 886 incl. VAT · 3-yr Quality Guarantee</p>
+</div>
+</div>
+<div class="bento-card med reveal" style="transition-delay:.2s">
+<div style="width:100%;height:100%;background:linear-gradient(135deg,#B8CDB0 0%,#9CB596 40%,#CADCC2 70%,#B8CDB0 100%);position:relative;overflow:hidden;display:flex;align-items:center;justify-content:center">
+<div style="position:absolute;inset:0">
+<svg width="100%" height="100%" xmlns="http://www.w3.org/2000/svg"><defs><pattern id="jac" patternUnits="userSpaceOnUse" width="40" height="40"><circle cx="20" cy="20" r="15" fill="none" stroke="rgba(255,255,255,0.18)" stroke-width="0.5"/><path d="M20 5 Q35 20 20 35 Q5 20 20 5" fill="none" stroke="rgba(255,255,255,0.18)" stroke-width="0.5"/></pattern></defs><rect width="100%" height="100%" fill="url(#jac)"/></svg>
+</div>
+<div style="position:absolute;bottom:0;left:0;right:0;height:220px;background:linear-gradient(to top,rgba(61,51,42,0.65),transparent)"></div>
+</div>
+<div class="bento-info">
+<p class="bento-collection">Save up to R2 300</p>
+<h3 class="bento-name">Nadia<br>Magnificent in Mint</h3>
+<p class="bento-price">From R1 978 incl. VAT · 7-yr Quality Guarantee</p>
+</div>
+</div>
+<div class="bento-card wide reveal" style="transition-delay:.3s">
+<div style="width:100%;height:100%;background:linear-gradient(135deg,#C7B8DE 0%,#AE9AC9 40%,#DCD0EC 100%);position:relative;overflow:hidden;display:flex;align-items:center;justify-content:center">
+<div style="position:absolute;inset:0;background:repeating-linear-gradient(45deg,rgba(255,255,255,0.12) 0px,rgba(255,255,255,0.12) 1px,transparent 1px,transparent 5px)"></div>
+<div style="font-family:var(--serif);font-size:120px;font-weight:300;color:rgba(255,255,255,0.3);letter-spacing:-0.05em">Iris</div>
+<div style="position:absolute;bottom:0;left:0;right:0;height:220px;background:linear-gradient(to top,rgba(61,51,42,0.65),transparent)"></div>
+</div>
+<div class="bento-info">
+<p class="bento-collection">Save up to R2 800</p>
+<h3 class="bento-name">Iris<br>Vogue Velvet</h3>
+<p class="bento-price">From R2 369 incl. VAT · Available in 3 Colours</p>
+</div>
+</div>
+<div class="bento-card tall reveal" style="transition-delay:.4s">
+<div style="width:100%;height:100%;background:linear-gradient(135deg,#E0D0AE 0%,#CDB587 40%,#EDE0C6 100%);position:relative;overflow:hidden;display:flex;align-items:center;justify-content:center">
+<div style="position:absolute;inset:0;background:repeating-linear-gradient(-30deg,rgba(255,255,255,0.16) 0px,rgba(255,255,255,0.16) 1px,transparent 1px,transparent 7px)"></div>
+<div style="position:absolute;bottom:0;left:0;right:0;height:220px;background:linear-gradient(to top,rgba(61,51,42,0.65),transparent)"></div>
+</div>
+<div class="bento-info">
+<p class="bento-collection">Save up to R1 400</p>
+<h3 class="bento-name">Ava<br>Nature Neutral</h3>
+<p class="bento-price">From R1 679 incl. VAT · 7-yr Guarantee</p>
+</div>
+</div>
+<div class="bento-card slim reveal" style="transition-delay:.5s">
+<div style="width:100%;height:100%;background:linear-gradient(135deg,#EBDCC8 0%,#DCC8AC 40%,#F2E8D8 100%);position:relative;overflow:hidden;display:flex;align-items:center;justify-content:center;flex-direction:column;gap:8px">
+<div style="width:60px;height:60px;border:1px solid rgba(184,147,90,0.5);border-radius:50%;display:flex;align-items:center;justify-content:center;background:rgba(255,255,255,0.3)">
+<span style="font-family:var(--serif);font-size:28px;color:var(--gold-dark);opacity:0.8">★</span>
+</div>
+<div style="font-size:9px;letter-spacing:0.25em;text-transform:uppercase;color:var(--walnut-soft);text-align:center">Save up to</div>
+<div style="font-family:var(--serif);font-size:32px;color:var(--gold-dark);font-weight:300">R500</div>
+<div style="position:absolute;bottom:0;left:0;right:0;height:180px;background:linear-gradient(to top,rgba(61,51,42,0.65),transparent)"></div>
+</div>
+<div class="bento-info">
+<p class="bento-collection">Luxe Fur Blankets</p>
+<h3 class="bento-name">Faux Fur<br>Velvet Lined</h3>
+<p class="bento-price">R2 392 incl. VAT · 200×240cm</p>
+</div>
+</div>
+</div>
+</section>
+
+<section id="heritage">
+<div class="heritage-grid">
+<div class="heritage-visual reveal">
+<div style="width:100%;aspect-ratio:4/5;background:linear-gradient(160deg,#E9DCBC 0%,#D9BD8C 40%,#B8935A 100%);position:relative;overflow:hidden;display:flex;align-items:center;justify-content:center;border-radius:2px">
+<div style="position:absolute;inset:0;background:repeating-linear-gradient(-45deg,rgba(255,255,255,0.12) 0px,rgba(255,255,255,0.12) 1px,transparent 1px,transparent 8px)"></div>
+<div style="text-align:center;position:relative;z-index:1;padding:40px">
+<div style="width:80px;height:1px;background:rgba(255,255,255,0.55);margin:0 auto 20px"></div>
+<p style="font-family:var(--serif);font-size:14px;font-style:italic;color:rgba(255,255,255,0.85);letter-spacing:0.1em">Exclusive to</p>
+<p style="font-family:var(--serif);font-size:48px;font-weight:300;color:#FFFEFB;line-height:1;margin:8px 0">Pres Les</p>
+<div style="width:80px;height:1px;background:rgba(255,255,255,0.55);margin:20px auto 0"></div>
+</div>
+</div>
+<div class="heritage-badge">
+<span class="heritage-badge-num">30+</span>
+<span class="heritage-badge-text">Years</span>
+</div>
+</div>
+<div class="reveal" style="transition-delay:.2s">
+<span class="section-label">Our Heritage</span>
+<h2 class="section-title">Crafted with<br><em>Purpose</em></h2>
+<p class="section-body" style="margin-top:24px;margin-bottom:40px">For over three decades, Pres Les has been South Africa's most trusted name in luxury home textiles. Every thread carries our promise of exceptional quality — bedding that wraps you in comfort night after night, year after year.</p>
+<div class="timeline">
+<div class="timeline-item">
+<span class="timeline-year">'94</span>
+<div class="timeline-content">
+<h4>The Beginning</h4>
+<p>Founded on a belief that every South African home deserves luxury bedding accessible to all.</p>
+</div>
+</div>
+<div class="timeline-item">
+<span class="timeline-year">'05</span>
+<div class="timeline-content">
+<h4>Printed Cristello Collection</h4>
+<p>Pioneering our signature Cristello fabric — the silky-smooth textile that defines the Pres Les touch.</p>
+</div>
+</div>
+<div class="timeline-item">
+<span class="timeline-year">'15</span>
+<div class="timeline-content">
+<h4>Quality Guarantee Introduced</h4>
+<p>Industry-leading quality guarantees: 7 years on premium bedding, 25 years on Cosmopolitan Cookware.</p>
+</div>
+</div>
+<div class="timeline-item">
+<span class="timeline-year">'26</span>
+<div class="timeline-content">
+<h4>The Tilly Special Edition</h4>
+<p>Our most beloved collection returns — celebrating the charming check that redefined modern bedding.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+
+<section id="materials">
+<div class="materials-header reveal">
+<span class="section-label">The Fabric of Luxury</span>
+<h2 class="section-title">Experience the<br><em>Material Difference</em></h2>
+<p class="section-body" style="margin:20px auto 0;text-align:center">Hover to feel each texture. Each fabric is chosen for its unique sensory quality and enduring beauty.</p>
+</div>
+<div class="materials-grid">
+<div class="material-card">
+<div class="material-bg velvet-bg"></div>
+<div class="material-texture velvet-texture"></div>
+<div class="material-overlay"></div>
+<div class="material-content">
+<div class="material-tag">Iris Collection</div>
+<p class="material-name">Velvet</p>
+<p class="material-desc">An opulent woven fabric with a distinctive soft pile, velvet catches light to create a luminous, ever-changing depth of color. Sumptuous warmth meets enduring elegance.</p>
+</div>
+</div>
+<div class="material-card">
+<div class="material-bg jacquard-bg"></div>
+<div class="material-texture jacquard-texture"></div>
+<div class="material-overlay"></div>
+<div class="material-content">
+<div class="material-tag">Nadia Collection</div>
+<p class="material-name">Woven Jacquard</p>
+<p class="material-desc">Intricate patterns woven directly into the fabric during creation — not printed on. Each design is architectural in its construction, with raised texture you can feel as well as see.</p>
+</div>
+</div>
+<div class="material-card">
+<div class="material-bg sateen-bg"></div>
+<div class="material-texture sateen-texture"></div>
+<div class="material-overlay"></div>
+<div class="material-content">
+<div class="material-tag">Tilly & Ava</div>
+<p class="material-name">Cotton Percale Blend</p>
+<p class="material-desc">A crisp, cool weave with a matte finish. Percale becomes softer with every wash — a fabric that improves with time, like the finest linen shirts.</p>
+</div>
+</div>
+<div class="material-card">
+<div class="material-bg percale-bg"></div>
+<div class="material-texture percale-texture"></div>
+<div class="material-overlay"></div>
+<div class="material-content">
+<div class="material-tag">Iris Collection</div>
+<p class="material-name">Tessuto</p>
+<p class="material-desc">Pres Les Tessuto sheeting — our proprietary woven fabric with a subtle sheen and buttery hand-feel. Developed exclusively for the Iris collection as the perfect velvet companion.</p>
+</div>
+</div>
+</div>
+</section>
+
+<section id="products">
+<div class="products-intro reveal">
+<div>
+<span class="section-label">Shop the Collection</span>
+<h2 class="section-title">Curated for<br><em>Your Sanctuary</em></h2>
+</div>
+<div style="text-align:right">
+<p class="section-body" style="max-width:320px;text-align:right">Flexible payment options available. No deposit instalment plans over 6, 18 or 24 months. SA customers only.</p>
+</div>
+</div>
+<div class="products-grid">
+<div class="product-card reveal" style="transition-delay:.1s">
+<div class="product-image">
+<div style="width:100%;height:100%;background:linear-gradient(160deg,#D6E3E9 0%,#AEC2CC 40%,#8FA9B5 100%);display:flex;align-items:center;justify-content:center">
+<div style="text-align:center">
+<div style="font-family:var(--serif);font-size:60px;font-weight:300;color:rgba(255,255,255,0.4)">TILCO3</div>
+</div>
+</div>
+<span class="product-tag">Special Edition</span>
+<button class="product-wishlist" aria-label="Add to wishlist">♡</button>
+</div>
+<p class="product-coll">Tilly · Charming Check</p>
+<h3 class="product-name">3-Piece Comforter Set</h3>
+<p class="product-sub">Pres Les Printed Cristello · Blue</p>
+<div class="product-price">
+<span class="price-current">From R1 886</span>
+<span class="price-install">or R218/mo</span>
+</div>
+<div class="product-colors">
+<div class="color-dot color-blue active" title="Blue"></div>
+</div>
+</div>
+<div class="product-card reveal" style="transition-delay:.2s">
+<div class="product-image">
+<div style="width:100%;height:100%;background:linear-gradient(160deg,#E8EEF0 0%,#C8D6DC 40%,#A8BBC2 100%);display:flex;align-items:center;justify-content:center">
+<div style="font-family:var(--serif);font-size:60px;font-weight:300;color:rgba(255,255,255,0.4)">TILSS4</div>
+</div>
+<button class="product-wishlist" aria-label="Add to wishlist">♡</button>
+</div>
+<p class="product-coll">Tilly · Charming Check</p>
+<h3 class="product-name">4-Piece Sheet Set</h3>
+<p class="product-sub">Pres Les Printed Cotton Percale Blend · Blue</p>
+<div class="product-price">
+<span class="price-current">From R2 185</span>
+<span class="price-install">or R237/mo</span>
+</div>
+<div class="product-colors">
+<div class="color-dot color-blue active" title="Blue"></div>
+</div>
+</div>
+<div class="product-card reveal" style="transition-delay:.3s">
+<div class="product-image">
+<div style="width:100%;height:100%;background:linear-gradient(160deg,#AEC2CC 0%,#8FA9B5 40%,#6F8E9C 100%);display:flex;align-items:center;justify-content:center">
+<div style="font-family:var(--serif);font-size:50px;font-weight:300;color:rgba(255,255,255,0.4)">TILCEC10</div>
+</div>
+<span class="product-tag">Best Value</span>
+<button class="product-wishlist" aria-label="Add to wishlist">♡</button>
+</div>
+<p class="product-coll">Tilly · Charming Check</p>
+<h3 class="product-name">Deluxe 10-Piece Ensemble</h3>
+<p class="product-sub">Printed Cristello + Cotton Percale Blend · Blue</p>
+<div class="product-price">
+<span class="price-current">From R4 485</span>
+<span class="price-install">or R382/mo</span>
+</div>
+<div class="product-colors">
+<div class="color-dot color-blue active" title="Blue"></div>
+</div>
+</div>
+<div class="product-card reveal" style="transition-delay:.4s">
+<div class="product-image">
+<div style="width:100%;height:100%;background:linear-gradient(160deg,#B8CDB0 0%,#9CB596 40%,#7C9A75 100%);display:flex;align-items:center;justify-content:center">
+<div style="font-family:var(--serif);font-size:60px;font-weight:300;color:rgba(255,255,255,0.3)">IRIBQP3</div>
+</div>
+<span class="product-tag">Save R2 800</span>
+<button class="product-wishlist" aria-label="Add to wishlist">♡</button>
+</div>
+<p class="product-coll">Iris · Vogue Velvet</p>
+<h3 class="product-name">3-Piece Bed Quilt Set</h3>
+<p class="product-sub">Velvet · Caramel, Emerald, Forest Green</p>
+<div class="product-price">
+<span class="price-current">From R2 369</span>
+<span class="price-install">or R249/mo</span>
+</div>
+<div class="product-colors">
+<div class="color-dot color-emerald active" title="Emerald"></div>
+<div class="color-dot color-caramel" title="Caramel"></div>
+<div class="color-dot color-green" title="Forest Green"></div>
+</div>
+</div>
+<div class="product-card reveal" style="transition-delay:.5s">
+<div class="product-image">
+<div style="width:100%;height:100%;background:linear-gradient(160deg,#F2E8D8 0%,#E0D0AE 40%,#CDB587 100%);display:flex;align-items:center;justify-content:center">
+<div style="font-family:var(--serif);font-size:60px;font-weight:300;color:rgba(255,255,255,0.45)">LUXFBP</div>
+</div>
+<span class="product-tag">Save R500</span>
+<button class="product-wishlist" aria-label="Add to wishlist">♡</button>
+</div>
+<p class="product-coll">Luxe Fur Blankets</p>
+<h3 class="product-name">Pres Les Luxe Fur Blanket</h3>
+<p class="product-sub">100% Polyester · Velvet Lined · 200×240cm</p>
+<div class="product-price">
+<span class="price-current">R2 392</span>
+<span class="price-install">or R249/mo</span>
+</div>
+<div class="product-colors">
+<div class="color-dot" style="background:#F0CACA" title="Blush"></div>
+<div class="color-dot active" style="background:#E0BBD2" title="Dusty Pink"></div>
+<div class="color-dot color-ivory" title="Ivory"></div>
+<div class="color-dot" style="background:#DCC4A0" title="Latte"></div>
+</div>
+</div>
+<div class="product-card reveal" style="transition-delay:.6s">
+<div class="product-image">
+<div style="width:100%;height:100%;background:linear-gradient(160deg,#CADCC2 0%,#A6C29C 40%,#82A176 100%);display:flex;align-items:center;justify-content:center">
+<div style="font-family:var(--serif);font-size:50px;font-weight:300;color:rgba(255,255,255,0.35)">NADCE10C</div>
+</div>
+<span class="product-tag">Best Value</span>
+<button class="product-wishlist" aria-label="Add to wishlist">♡</button>
+</div>
+<p class="product-coll">Nadia · Magnificent in Mint</p>
+<h3 class="product-name">Deluxe 10-Piece Ensemble</h3>
+<p class="product-sub">Woven Jacquard + Cotton Percale Blend · Mint</p>
+<div class="product-price">
+<span class="price-current">From R4 784</span>
+<span class="price-install">or R401/mo</span>
+</div>
+<div class="product-colors">
+<div class="color-dot color-mint active" title="Mint"></div>
+</div>
+</div>
+</div>
+</section>
+
+<div id="gallery">
+<div class="gallery-strip">
+<div class="gallery-pane">
+<div style="width:100%;height:100%;background:linear-gradient(160deg,#D6E3E9 0%,#8FA9B5 100%);display:flex;align-items:center;justify-content:center">
+<div style="font-family:var(--serif);font-size:80px;font-weight:300;color:rgba(255,255,255,0.4);letter-spacing:-0.05em">Tilly</div>
+</div>
+<div class="gallery-caption"><p>The Tilly bedroom — calm in blue</p></div>
+</div>
+<div class="gallery-pane">
+<div style="width:100%;height:100%;background:linear-gradient(160deg,#CADCC2 0%,#7C9A75 100%);display:flex;align-items:center;justify-content:center">
+<div style="font-family:var(--serif);font-size:80px;font-weight:300;color:rgba(255,255,255,0.4);letter-spacing:-0.05em">Nadia</div>
+</div>
+<div class="gallery-caption"><p>The Nadia suite — mint serenity</p></div>
+</div>
+<div class="gallery-pane">
+<div style="width:100%;height:100%;background:linear-gradient(160deg,#DCD0EC 0%,#AE9AC9 100%);display:flex;align-items:center;justify-content:center">
+<div style="font-family:var(--serif);font-size:80px;font-weight:300;color:rgba(255,255,255,0.4);letter-spacing:-0.05em">Iris</div>
+</div>
+<div class="gallery-caption"><p>The Iris room — emerald luxury</p></div>
+</div>
+<div class="gallery-pane">
+<div style="width:100%;height:100%;background:linear-gradient(160deg,#EDE0C6 0%,#CDB587 100%);display:flex;align-items:center;justify-content:center">
+<div style="font-family:var(--serif);font-size:80px;font-weight:300;color:rgba(255,255,255,0.4);letter-spacing:-0.05em">Ava</div>
+</div>
+<div class="gallery-caption"><p>The Ava interior — nature's neutrals</p></div>
+</div>
+<div class="gallery-pane">
+<div style="width:100%;height:100%;background:linear-gradient(160deg,#F2E8D8 0%,#CDB587 100%);display:flex;align-items:center;justify-content:center">
+<div style="font-family:var(--serif);font-size:80px;font-weight:300;color:rgba(255,255,255,0.45);letter-spacing:-0.05em">Fur</div>
+</div>
+<div class="gallery-caption"><p>Luxe Fur — ivory warmth</p></div>
+</div>
+</div>
+</div>
+
+<section id="cookware">
+<div class="cookware-layout">
+<div class="cookware-visual reveal">
+<div style="width:100%;aspect-ratio:1;background:linear-gradient(160deg,#F1EADA 0%,#E5D9C0 40%,#D9C7A4 100%);display:flex;align-items:center;justify-content:center;position:relative;overflow:hidden;border-radius:2px">
+<div style="position:absolute;inset:0;background:repeating-linear-gradient(45deg,rgba(184,147,90,0.06) 0px,rgba(184,147,90,0.06) 1px,transparent 1px,transparent 12px)"></div>
+<div style="text-align:center;position:relative;z-index:1">
+<div style="width:180px;height:180px;border-radius:50%;border:1px solid rgba(184,147,90,0.4);display:flex;align-items:center;justify-content:center;margin:0 auto">
+<div style="width:140px;height:140px;border-radius:50%;background:linear-gradient(135deg,#EAEAEA 0%,#D0D0D0 40%,#F4F4F4 100%);box-shadow:inset 0 0 30px rgba(125,113,96,0.2),0 8px 20px rgba(125,113,96,0.15)"></div>
+</div>
+<div style="margin-top:24px;font-family:var(--serif);font-size:16px;font-style:italic;color:var(--taupe-dark)">Stainless Steel Mirror Finish</div>
+</div>
+</div>
+<div class="cookware-stats reveal" style="transition-delay:.2s">
+<div class="stat-box">
+<div class="stat-num">25yr</div>
+<div class="stat-label">Quality Guarantee</div>
+</div>
+<div class="stat-box">
+<div class="stat-num">16pc</div>
+<div class="stat-label">Deluxe Full Set</div>
+</div>
+<div class="stat-box">
+<div class="stat-num">12L</div>
+<div class="stat-label">Stock Pot Capacity</div>
+</div>
+<div class="stat-box">
+<div class="stat-num">R8K</div>
+<div class="stat-label">Save on Full Set</div>
+</div>
+</div>
+</div>
+<div class="reveal" style="transition-delay:.3s">
+<span class="section-label">Cosmopolitan Cookware</span>
+<h2 class="section-title">Precision Meets<br><em>Elegance</em></h2>
+<p class="section-body" style="margin:24px 0 32px">The Pres Les Cosmopolitan Cookware range — where cutting-edge technology meets sophisticated design. A sleek stainless steel mirror finish, ergonomic dome lids, and capacity markings for precision cooking.</p>
+<div style="display:flex;flex-direction:column;gap:16px;margin-bottom:40px">
+<div style="display:flex;align-items:flex-start;gap:16px">
+<div style="width:1px;background:var(--gold);flex-shrink:0;margin-top:6px;height:40px"></div>
+<div>
+<p style="font-family:var(--serif);font-size:16px;color:var(--walnut);margin-bottom:4px">Helping Hand Design</p>
+<p style="font-size:13px;color:var(--taupe-dark);font-weight:300">Moulded ergonomic handles with secure grip for confident cooking and serving.</p>
+</div>
+</div>
+<div style="display:flex;align-items:flex-start;gap:16px">
+<div style="width:1px;background:var(--gold);flex-shrink:0;margin-top:6px;height:40px"></div>
+<div>
+<p style="font-family:var(--serif);font-size:16px;color:var(--walnut);margin-bottom:4px">Superior Interior</p>
+<p style="font-size:13px;color:var(--taupe-dark);font-weight:300">Matte stainless steel interior with easy-to-read capacity markings in quarts and litres.</p>
+</div>
+</div>
+<div style="display:flex;align-items:flex-start;gap:16px">
+<div style="width:1px;background:var(--gold);flex-shrink:0;margin-top:6px;height:40px"></div>
+<div>
+<p style="font-family:var(--serif);font-size:16px;color:var(--walnut);margin-bottom:4px">Sets from R2 668</p>
+<p style="font-size:13px;color:var(--taupe-dark);font-weight:300">2-piece stock pot through to the complete 16-piece collection at R14 858.</p>
+</div>
+</div>
+</div>
+<div style="display:flex;gap:16px">
+<a href="#" class="btn-primary">Shop Cookware</a>
+<a href="#" class="btn-ghost">View All Sets</a>
+</div>
+</div>
+</div>
+</section>
+
+<section id="testimonials">
+<div class="testimonials-header reveal">
+<span class="section-label">What Our Customers Say</span>
+<h2 class="section-title">Luxury <em>Lived In</em></h2>
+</div>
+<div class="testimonials-grid">
+<div class="testimonial-card reveal" style="transition-delay:.1s">
+<div class="stars">
+<span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span>
+</div>
+<div class="quote-mark">"</div>
+<p class="testimonial-text">The Tilly comforter has transformed our bedroom. It's reversible — whichever way you make the bed, it looks immaculate. Three years in and it still feels brand new.</p>
+<div class="testimonial-author">
+<div class="author-avatar">SM</div>
+<div>
+<p class="author-name">Sarah M.</p>
+<p class="author-loc">Johannesburg, South Africa</p>
+</div>
+</div>
+</div>
+<div class="testimonial-card reveal" style="transition-delay:.2s">
+<div class="stars">
+<span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span>
+</div>
+<div class="quote-mark">"</div>
+<p class="testimonial-text">The Nadia Woven Jacquard is extraordinary. The pattern is woven into the fabric itself — you feel it as much as you see it. My guests always ask where I found it.</p>
+<div class="testimonial-author">
+<div class="author-avatar">TK</div>
+<div>
+<p class="author-name">Thabo K.</p>
+<p class="author-loc">Cape Town, South Africa</p>
+</div>
+</div>
+</div>
+<div class="testimonial-card reveal" style="transition-delay:.3s">
+<div class="stars">
+<span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span>
+</div>
+<div class="quote-mark">"</div>
+<p class="testimonial-text">The Iris Velvet set in Emerald is absolutely stunning. The 7-year guarantee gave me confidence to invest — and the quality surpassed every expectation I had.</p>
+<div class="testimonial-author">
+<div class="author-avatar">LN</div>
+<div>
+<p class="author-name">Lindiwe N.</p>
+<p class="author-loc">Durban, South Africa</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+
+<section id="loyalty">
+<span class="section-label">Customer Loyalty Programme</span>
+<h2 class="section-title reveal">Bonus Bash<br><em>Rewards</em></h2>
+<p class="section-body reveal" style="margin:20px auto 0;text-align:center;color:rgba(61,51,42,0.65)">Rewarding loyal instalment credit customers with peace of mind through value-added protection. In partnership with Sanlam & Groups R Us.</p>
+<div class="loyalty-features reveal">
+<div class="loyalty-feat">
+<div class="loyalty-icon">♡</div>
+<h4>Credit Life Cover</h4>
+<p>Your outstanding balance is fully settled in the event of retrenchment, disability, or death.</p>
+</div>
+<div class="loyalty-feat">
+<div class="loyalty-icon">✦</div>
+<h4>Food Vouchers</h4>
+<p>Stay current with payments and unlock exclusive rewards at Checkers, Shoprite, and more.</p>
+</div>
+<div class="loyalty-feat">
+<div class="loyalty-icon">◎</div>
+<h4>Airtime & Data</h4>
+<p>Earn airtime and data rewards from Vodacom, Telkom, MTN, and Cell C.</p>
+</div>
+<div class="loyalty-feat">
+<div class="loyalty-icon">✈</div>
+<h4>Travel Rewards</h4>
+<p>Unlock travel benefits and so much more when you stay current on your account.</p>
+</div>
+</div>
+</section>
+
+<section id="newsletter">
+<span class="section-label" style="display:block;text-align:center;margin-bottom:24px">Join the Inner Circle</span>
+<h2 class="section-title reveal">First to Know.<br><em>First to Indulge.</em></h2>
+<p class="section-body reveal">Receive exclusive early access to new collections, special promotions, and the Pres Les lifestyle journal.</p>
+<form class="newsletter-form reveal" onsubmit="return false">
+<input type="email" class="newsletter-input" placeholder="Your email address" aria-label="Email address">
+<button type="submit" class="newsletter-btn">Subscribe</button>
+</form>
+</section>
+
+<footer>
+<div class="footer-grid">
+<div class="footer-brand">
+<a href="#" class="nav-logo">Pres <span>Les</span></a>
+<p class="footer-tagline">Softness woven into every thread. Luxury redefined for the discerning South African home.</p>
+<div style="display:flex;gap:12px;margin-top:24px">
+<div style="width:32px;height:32px;border:1px solid rgba(184,147,90,0.3);display:flex;align-items:center;justify-content:center;cursor:none;transition:border-color .3s" onmouseenter="this.style.borderColor='rgba(184,147,90,0.7)'" onmouseleave="this.style.borderColor='rgba(184,147,90,0.3)'">
+<span style="font-size:12px;color:var(--taupe-dark)">f</span>
+</div>
+<div style="width:32px;height:32px;border:1px solid rgba(184,147,90,0.3);display:flex;align-items:center;justify-content:center;cursor:none;transition:border-color .3s" onmouseenter="this.style.borderColor='rgba(184,147,90,0.7)'" onmouseleave="this.style.borderColor='rgba(184,147,90,0.3)'">
+<span style="font-size:12px;color:var(--taupe-dark)">in</span>
+</div>
+<div style="width:32px;height:32px;border:1px solid rgba(184,147,90,0.3);display:flex;align-items:center;justify-content:center;cursor:none;transition:border-color .3s" onmouseenter="this.style.borderColor='rgba(184,147,90,0.7)'" onmouseleave="this.style.borderColor='rgba(184,147,90,0.3)'">
+<span style="font-size:11px;color:var(--taupe-dark)">IG</span>
+</div>
+</div>
+</div>
+<div class="footer-col">
+<h5>Collections</h5>
+<ul>
+<li><a href="#">Tilly — Charming Check</a></li>
+<li><a href="#">Nadia — Magnificent in Mint</a></li>
+<li><a href="#">Iris — Vogue Velvet</a></li>
+<li><a href="#">Ava — Nature Neutral</a></li>
+<li><a href="#">Luxe Fur Blankets</a></li>
+<li><a href="#">Cosmopolitan Cookware</a></li>
+</ul>
+</div>
+<div class="footer-col">
+<h5>Customer Care</h5>
+<ul>
+<li><a href="#">Track Your Order</a></li>
+<li><a href="#">Payment Plans</a></li>
+<li><a href="#">Quality Guarantee</a></li>
+<li><a href="#">Returns Policy</a></li>
+<li><a href="#">Bonus Bash Rewards</a></li>
+<li><a href="mailto:info@presles.co.za">info@presles.co.za</a></li>
+</ul>
+</div>
+<div class="footer-col">
+<h5>Order Documents</h5>
+<ul>
+<li><a href="#">Email to Pres Les</a></li>
+<li><a href="#">WhatsApp +27 63 650 4393</a></li>
+<li><a href="#">Via the Pres Les App</a></li>
+<li><a href="#">Terms & Conditions</a></li>
+<li><a href="#">Privacy Policy</a></li>
+<li><a href="#">National Credit Act</a></li>
+</ul>
+</div>
+</div>
+<div class="footer-bottom">
+<p class="footer-copy">© 2026 Pres Les. All rights reserved. DSA Member · Promotion valid 12 June – 10 July 2026 · Prices include 15% VAT</p>
+<div class="footer-social">
+<a href="#" class="social-link">Facebook</a>
+<a href="#" class="social-link">Instagram</a>
+<a href="#" class="social-link">WhatsApp</a>
+</div>
+</div>
+</footer>
+
+<script>
+const cursor = document.getElementById('cursor');
+const trail = document.getElementById('cursor-trail');
+let mx = 0, my = 0, tx = 0, ty = 0;
+
+document.addEventListener('mousemove', e => {
+mx = e.clientX; my = e.clientY;
+cursor.style.left = mx + 'px';
+cursor.style.top = my + 'px';
+});
+
+function animateTrail() {
+tx += (mx - tx) * 0.12;
+ty += (my - ty) * 0.12;
+trail.style.left = tx + 'px';
+trail.style.top = ty + 'px';
+requestAnimationFrame(animateTrail);
+}
+animateTrail();
+
+document.querySelectorAll('a,button,.bento-card,.product-card,.material-card,.gallery-pane').forEach(el => {
+el.addEventListener('mouseenter', () => {
+cursor.style.width = '20px';
+cursor.style.height = '20px';
+cursor.style.background = 'rgba(184,147,90,0.85)';
+trail.style.width = '58px';
+trail.style.height = '58px';
+});
+el.addEventListener('mouseleave', () => {
+cursor.style.width = '11px';
+cursor.style.height = '11px';
+cursor.style.background = 'var(--gold)';
+trail.style.width = '38px';
+trail.style.height = '38px';
+});
+});
+
+const navbar = document.getElementById('navbar');
+window.addEventListener('scroll', () => {
+navbar.classList.toggle('scrolled', window.scrollY > 60);
+});
+
+const revealEls = document.querySelectorAll('.reveal');
+const observer = new IntersectionObserver(entries => {
+entries.forEach(e => {
+if (e.isIntersecting) {
+e.target.classList.add('visible');
+observer.unobserve(e.target);
+}
+});
+}, { threshold: 0.12, rootMargin: '0px 0px -60px 0px' });
+revealEls.forEach(el => observer.observe(el));
+
+const canvas = document.getElementById('hero-canvas');
+const ctx = canvas.getContext('2d');
+let W, H, time = 0;
+const threads = [];
+
+function resize() {
+W = canvas.width = window.innerWidth;
+H = canvas.height = window.innerHeight;
+initThreads();
+}
+
+function initThreads() {
+threads.length = 0;
+const count = Math.floor(W / 16);
+for (let i = 0; i < count; i++) {
+threads.push({
+x: (i / count) * W,
+phase: Math.random() * Math.PI * 2,
+speed: 0.25 + Math.random() * 0.35,
+amp: 18 + Math.random() * 36,
+freq: 0.003 + Math.random() * 0.004,
+hue: 36 + Math.random() * 25,
+brightness: 0.12 + Math.random() * 0.22,
+});
+}
+}
+
+let mx2 = W / 2 || 0, my2 = H / 2 || 0;
+document.addEventListener('mousemove', e => { mx2 = e.clientX; my2 = e.clientY; });
+
+function draw() {
+ctx.clearRect(0, 0, W, H);
+time += 0.007;
+
+const influence = { x: (mx2 / W - 0.5), y: (my2 / H - 0.5) };
+
+threads.forEach(t => {
+ctx.beginPath();
+const pts = 60;
+for (let j = 0; j <= pts; j++) {
+const y = (j / pts) * H;
+const prog = j / pts;
+const wave = Math.sin(y * t.freq + time * t.speed + t.phase);
+const mouseEffect = influence.x * 28 * Math.sin(prog * Math.PI);
+const x = t.x + wave * t.amp + mouseEffect;
+j === 0 ? ctx.moveTo(x, y) : ctx.lineTo(x, y);
+}
+const opacity = t.brightness + 0.08 * Math.sin(time * t.speed + t.phase);
+ctx.strokeStyle = `hsla(${t.hue}, 45%, 55%, ${Math.max(0.02, opacity)})`;
+ctx.lineWidth = 0.7;
+ctx.stroke();
+});
+
+requestAnimationFrame(draw);
+}
+
+window.addEventListener('resize', resize);
+resize();
+draw();
+
+window.addEventListener('scroll', () => {
+const hero = document.getElementById('hero');
+const scrolled = window.scrollY;
+if (scrolled < window.innerHeight) {
+hero.style.transform = `translateY(${scrolled * 0.3}px)`;
+}
+});
+
+document.querySelectorAll('.color-dot').forEach(dot => {
+dot.addEventListener('click', function() {
+this.closest('.product-colors').querySelectorAll('.color-dot').forEach(d => d.classList.remove('active'));
+this.classList.add('active');
+});
+});
+
+document.querySelectorAll('.product-card').forEach(card => {
+card.addEventListener('mouseenter', () => {
+card.style.transform = 'translateY(-6px)';
+card.style.transition = 'transform 0.4s cubic-bezier(0.16,1,0.3,1)';
+});
+card.addEventListener('mouseleave', () => {
+card.style.transform = '';
+});
+});
+
+document.querySelectorAll('.material-card').forEach(card => {
+card.addEventListener('mousemove', e => {
+const rect = card.getBoundingClientRect();
+const x = ((e.clientX - rect.left) / rect.width - 0.5) * 16;
+const y = ((e.clientY - rect.top) / rect.height - 0.5) * 16;
+card.style.transform = `perspective(800px) rotateX(${-y}deg) rotateY(${x}deg)`;
+card.style.transition = 'transform 0.1s';
+});
+card.addEventListener('mouseleave', () => {
+card.style.transform = '';
+card.style.transition = 'transform 0.6s cubic-bezier(0.16,1,0.3,1)';
+});
+});
+
+const form = document.querySelector('.newsletter-form');
+if (form) {
+form.addEventListener('submit', function(e) {
+e.preventDefault();
+const btn = this.querySelector('.newsletter-btn');
+btn.textContent = 'Welcome ✓';
+btn.style.background = 'var(--gold-dark)';
+setTimeout(() => {
+btn.textContent = 'Subscribe';
+btn.style.background = '';
+}, 3000);
+});
+}
+</script>
+</body>
+</html>
